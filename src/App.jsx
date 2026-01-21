@@ -458,7 +458,7 @@ export default function Portfolio() {
           {/* Lien LinkedIn */}
           <div className="flex justify-center">
             <a 
-              href="https://www.linkedin.com/in/khaireddine-cherif-myprofile" 
+              href="https://www.linkedin.com/in/khaireddine-cherif-myprofile/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-12 h-12 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700 hover:border-cyan-500 hover:bg-cyan-500/10 transition-all"
