@@ -168,14 +168,14 @@ export default function Portfolio() {
               Voir mes projets
             </button>
           </div>
-          <button onClick={() => scrollToSection('competences')} className="animate-bounce">
+          <button onClick={() => scrollToSection('compétences')} className="animate-bounce">
             <ChevronDown className="w-8 h-8 text-cyan-400 mx-auto" />
           </button>
         </div>
       </section>
 
       {/* Compétences Section */}
-      <section id="competences" className="py-20 px-4 bg-slate-900/50">
+      <section id="compétences" className="py-20 px-4 bg-slate-900/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Mes <span className="text-cyan-400">Compétences</span>
@@ -274,7 +274,7 @@ export default function Portfolio() {
       </section>
 
       {/* Expérience Section */}
-      <section id="experience" className="py-20 px-4">
+      <section id="expérience" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Mon <span className="text-cyan-400">Expérience</span>
