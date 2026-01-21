@@ -13,7 +13,7 @@ export default function Portfolio() {
       setIsScrolled(window.scrollY > 50);
       
       // Détection de la section visible avec Intersection Observer pour plus de précision
-      const sections = ['accueil', 'competences', 'experience', 'projets', 'contact'];
+      const sections = ['accueil', 'compétences', 'expérience', 'projets', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
       let currentSection = 'accueil';
@@ -126,7 +126,7 @@ export default function Portfolio() {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'compétences', 'expérience', 'projets', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
