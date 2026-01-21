@@ -281,6 +281,30 @@ export default function Portfolio() {
           </h2>
 
           <div className="space-y-8">
+            {/* Expérience la plus récente - Cloud */}
+            <div className="bg-slate-800/30 p-6 rounded-xl border-l-4 border-emerald-500">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-emerald-400">Consultant Cloud Sécurité - Reporting Vulnérabilités</h3>
+                  <p className="text-xl text-gray-300">Groupe Énergétique International</p>
+                </div>
+                <span className="text-gray-400 mt-2 md:mt-0">Septembre 2025 - En cours</span>
+              </div>
+              <p className="text-gray-300 mb-4">CSPM & Reporting de Sécurité Cloud</p>
+              <ul className="space-y-2 text-gray-300">
+                <li>• Reporting de vulnérabilités via CSPM (Cloud Security Posture Management)</li>
+                <li>• AWS Security Hub - Analyse et remontée des findings</li>
+                <li>• Google Cloud SCC (Security Command Center) - Monitoring et alerting</li>
+                <li>• Reporting hebdomadaire et mensuel des métriques de sécurité</li>
+                <li>• Définition et suivi de KPI de sécurité cloud</li>
+                <li>• Gestion fonctionnelle et opérationnelle des processus de remédiation</li>
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs bg-emerald-900/30 text-emerald-300 px-3 py-1 rounded-full">AWS Security Hub</span>
+                <span className="text-xs bg-emerald-900/30 text-emerald-300 px-3 py-1 rounded-full">Google Cloud SCC</span>
+                <span className="text-xs bg-emerald-900/30 text-emerald-300 px-3 py-1 rounded-full">KPI/Metrics Google Data Studio</span>
+              </div>
+            </div>
             {/* Entreprise 1 */}
             <div className="bg-slate-800/30 p-6 rounded-xl border-l-4 border-cyan-500">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
@@ -288,7 +312,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl font-bold text-cyan-400">Consultant OpenLDAP</h3>
                   <p className="text-xl text-gray-300">Groupe Énergétique International</p>
                 </div>
-                <span className="text-gray-400 mt-2 md:mt-0">Mars 2024 - En cours</span>
+                <span className="text-gray-400 mt-2 md:mt-0">Mars 2024 - Septembre 2025</span>
               </div>
               <p className="text-gray-300 mb-4">Projet Refonte des annuaires</p>
               <ul className="space-y-2 text-gray-300">
@@ -312,7 +336,7 @@ export default function Portfolio() {
                   <h3 className="text-2xl font-bold text-blue-400">Consultant en Cybersécurité Opérationnelle</h3>
                   <p className="text-xl text-gray-300">Multinationale Services Environnementaux</p>
                 </div>
-                <span className="text-gray-400 mt-2 md:mt-0">Février 2023 - Janvier 2024</span>
+                <span className="text-gray-400 mt-2 md:mt-0">Février 2023 - Fevrier 2024</span>
               </div>
               <ul className="space-y-2 text-gray-300">
                 <li>• Traitement d'incidents Cyber (Antivirus, EDR, SIEM)</li>
