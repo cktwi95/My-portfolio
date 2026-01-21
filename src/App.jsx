@@ -299,7 +299,8 @@ export default function Portfolio() {
                 </div>
                 <span className="text-gray-400 mt-2 md:mt-0">Septembre 2025 - En cours</span>
               </div>
-              <p className="text-gray-300 mb-4">CSPM & Reporting de Sécurité Cloud</p>
+              <p className="text-gray-300 mb-4">CSPM & Reporting de vulnérabilités</p>
+              <p className="text-gray-200 mb-4">Contexte anglophone</p>
               <ul className="space-y-2 text-gray-300">
                 <li>• Reporting de vulnérabilités via CSPM (Cloud Security Posture Management)</li>
                 <li>• AWS Security Hub - Analyse et remontée des findings</li>
@@ -352,7 +353,7 @@ export default function Portfolio() {
                 <li>• Traitement d'alertes provenant d'un SOC</li>
                 <li>• Conformité des environnements Infra/réseaux</li>
                 <li>• Pilotage des projets Cybersécurité</li>
-                <li>• Tests d'intrusion avec Qualys et Acunetix</li>
+                <li>• Scans de vulnérabilités avec Qualys et Acunetix</li>
               </ul>
               <div className="mt-4 flex flex-wrap gap-2">
                 <span className="text-xs bg-blue-900/30 text-blue-300 px-3 py-1 rounded-full">Cybereason</span>
