@@ -215,7 +215,8 @@ export default function Portfolio() {
               <h3 className="text-xl font-bold mb-3">Certifications</h3>
               <ul className="space-y-2 text-gray-300 text-sm">
                 <li>✓ CHFI (Computer Hacking Forensic Investigator)</li>
-                <li>🔄 CEH (En cours)</li>
+                <li>🔄 CEH</li>
+                <li>🔄 CHFI</li>
                 <li>🔄 OSCP (En cours)</li>
               </ul>
             </div>
