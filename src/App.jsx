@@ -55,7 +55,7 @@ export default function Portfolio() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'compétences', 'expérience', 'projets', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -77,7 +77,7 @@ export default function Portfolio() {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'compétences', 'experience', 'projets', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -214,10 +214,10 @@ export default function Portfolio() {
               <Lock className="w-12 h-12 text-yellow-400 mb-4" />
               <h3 className="text-xl font-bold mb-3">Certifications</h3>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li>✓ CHFI (Computer Hacking Forensic Investigator)</li>
-                <li>🔄 CEH</li>
-                <li>🔄 CHFI</li>
-                <li>🔄 OSCP (En cours)</li>
+                <li>✓ CHFI Computer Hacking Forensic Investigator</li>
+                <li>✓ CEH Certified ethical hacker</li>
+                <li>✓ AWS Security Essentials</li>
+                <li>🔄 OSCP En cours</li>
               </ul>
             </div>
           </div>
@@ -458,7 +458,7 @@ export default function Portfolio() {
           {/* Lien LinkedIn */}
           <div className="flex justify-center">
             <a 
-              href="https://www.linkedin.com/in/khaireddine-cherif" 
+              href="https://www.linkedin.com/in/khaireddine-cherif-myprofile" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-12 h-12 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700 hover:border-cyan-500 hover:bg-cyan-500/10 transition-all"
