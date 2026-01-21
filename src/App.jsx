@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Code, Network, Terminal, Mail, Phone, Github, Linkedin, ChevronDown, Menu, X, Lock, Server, Bug, Eye } from 'lucide-react';
+import { Shield, Code, Network, Terminal, Mail, Linkedin, ChevronDown, Menu, X, Lock, Server, Bug, Eye, Send } from 'lucide-react';
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('accueil');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formStatus, setFormStatus] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +23,23 @@ export default function Portfolio() {
       setIsMenuOpen(false);
       setActiveSection(sectionId);
     }
+  };
+
+  const handleFormChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Création du lien mailto avec les données du formulaire
+    const subject = encodeURIComponent(`Message de ${formData.name}`);
+    const body = encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    window.location.href = `mailto:khaireddine.cherif27@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Reset du formulaire
+    setFormData({ name: '', email: '', message: '' });
+    setFormStatus('Message envoyé !');
+    setTimeout(() => setFormStatus(''), 3000);
   };
 
   return (
@@ -92,10 +111,10 @@ export default function Portfolio() {
             4 années d'expérience dans la sécurisation des infrastructures et le traitement d'incidents.
           </p>
           <div className="flex justify-center space-x-4 mb-12">
-            <a href="mailto:khaireddine.cherif27@gmail.com" className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-colors">
+            <button onClick={() => scrollToSection('contact')} className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-colors">
               <Mail className="w-5 h-5" />
               <span>Me contacter</span>
-            </a>
+            </button>
             <button onClick={() => scrollToSection('projets')} className="border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 px-6 py-3 rounded-lg transition-colors">
               Voir mes projets
             </button>
@@ -212,12 +231,12 @@ export default function Portfolio() {
           </h2>
 
           <div className="space-y-8">
-            {/* EDF */}
+            {/* Entreprise 1 */}
             <div className="bg-slate-800/30 p-6 rounded-xl border-l-4 border-cyan-500">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-cyan-400">Consultant OpenLDAP</h3>
-                  <p className="text-xl text-gray-300">EDF</p>
+                  <p className="text-xl text-gray-300">Groupe Énergétique International</p>
                 </div>
                 <span className="text-gray-400 mt-2 md:mt-0">Mars 2024 - En cours</span>
               </div>
@@ -236,12 +255,12 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Veolia */}
+            {/* Entreprise 2 */}
             <div className="bg-slate-800/30 p-6 rounded-xl border-l-4 border-blue-500">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-blue-400">Consultant en Cybersécurité Opérationnelle</h3>
-                  <p className="text-xl text-gray-300">Veolia RVD</p>
+                  <p className="text-xl text-gray-300">Multinationale Services Environnementaux</p>
                 </div>
                 <span className="text-gray-400 mt-2 md:mt-0">Février 2023 - Janvier 2024</span>
               </div>
@@ -260,12 +279,12 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Holy-Dis */}
+            {/* Entreprise 3 */}
             <div className="bg-slate-800/30 p-6 rounded-xl border-l-4 border-purple-500">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-purple-400">Ingénieur en Cybersécurité</h3>
-                  <p className="text-xl text-gray-300">Holy-Dis</p>
+                  <p className="text-xl text-gray-300">PME Technologique</p>
                 </div>
                 <span className="text-gray-400 mt-2 md:mt-0">Décembre 2022 - Décembre 2023</span>
               </div>
@@ -351,37 +370,98 @@ export default function Portfolio() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8 text-center">
             Contactez-<span className="text-cyan-400">moi</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-12">
+          <p className="text-xl text-gray-300 mb-12 text-center">
             Discutons de vos projets en cybersécurité
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <a href="mailto:khaireddine.cherif27@gmail.com" className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105 flex items-center space-x-4">
-              <Mail className="w-8 h-8 text-cyan-400" />
-              <div className="text-left">
-                <p className="text-sm text-gray-400">Email</p>
-                <p className="text-gray-200">khaireddine.cherif27@gmail.com</p>
+          {/* Formulaire de contact */}
+          <div className="bg-slate-800/50 p-8 rounded-xl border border-slate-700 mb-12">
+            <form onSubmit={handleFormSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  Nom
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-gray-100"
+                  placeholder="Votre nom"
+                />
               </div>
-            </a>
 
-            <a href="tel:0608749728" className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105 flex items-center space-x-4">
-              <Phone className="w-8 h-8 text-cyan-400" />
-              <div className="text-left">
-                <p className="text-sm text-gray-400">Téléphone</p>
-            
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-gray-100"
+                  placeholder="votre.email@exemple.com"
+                />
               </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleFormChange}
+                  required
+                  rows="5"
+                  className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:outline-none focus:border-cyan-500 text-gray-100 resize-none"
+                  placeholder="Votre message..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors"
+              >
+                <Send className="w-5 h-5" />
+                <span>Envoyer le message</span>
+              </button>
+
+              {formStatus && (
+                <p className="text-center text-green-400">{formStatus}</p>
+              )}
+            </form>
+          </div>
+
+          {/* Email centré */}
+          <div className="text-center mb-8">
+            <a 
+              href="mailto:khaireddine.cherif27@gmail.com" 
+              className="inline-flex items-center space-x-3 text-cyan-400 hover:text-cyan-300 transition-colors text-lg"
+            >
+              <Mail className="w-6 h-6" />
+              <span>khaireddine.cherif27@gmail.com</span>
             </a>
           </div>
 
-          <div className="flex justify-center space-x-6">
-            <a href="#" className="w-12 h-12 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700 hover:border-cyan-500 hover:bg-cyan-500/10 transition-all">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href="#" className="w-12 h-12 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700 hover:border-cyan-500 hover:bg-cyan-500/10 transition-all">
+          {/* Lien LinkedIn */}
+          <div className="flex justify-center">
+            <a 
+              href="https://www.linkedin.com/in/khaireddine-cherif" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-slate-800/50 rounded-full flex items-center justify-center border border-slate-700 hover:border-cyan-500 hover:bg-cyan-500/10 transition-all"
+            >
               <Linkedin className="w-6 h-6" />
             </a>
           </div>
