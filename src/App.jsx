@@ -7,13 +7,21 @@ export default function Portfolio() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
+  const sectionLabels = {
+  accueil: 'Accueil',
+  competences: 'Compétences',
+  experience: 'Expérience',
+  projets: 'Projets',
+  contact: 'Contact'
+};
+
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
       // Détection de la section visible avec Intersection Observer pour plus de précision
-      const sections = ['accueil', 'compétences', 'expérience', 'projets', 'contact'];
+      const sections = ['accueil', 'competences', 'experience', 'projets', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
       let currentSection = 'accueil';
@@ -104,13 +112,13 @@ export default function Portfolio() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['accueil', 'compétences', 'expérience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
                   className={`capitalize hover:text-cyan-400 transition-colors ${activeSection === section ? 'text-cyan-400' : ''}`}
                 >
-                  {section}
+                {sectionLabels[section]}
                 </button>
               ))}
             </div>
@@ -126,13 +134,13 @@ export default function Portfolio() {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['accueil', 'compétences', 'expérience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
                   className="block w-full text-left px-3 py-2 capitalize hover:bg-slate-800 rounded-md"
                 >
-                  {section}
+                {sectionLabels[section]}
                 </button>
               ))}
             </div>
@@ -168,14 +176,14 @@ export default function Portfolio() {
               Voir mes projets
             </button>
           </div>
-          <button onClick={() => scrollToSection('compétences')} className="animate-bounce">
+          <button onClick={() => scrollToSection('competences')} className="animate-bounce">
             <ChevronDown className="w-8 h-8 text-cyan-400 mx-auto" />
           </button>
         </div>
       </section>
 
       {/* Compétences Section */}
-      <section id="compétences" className="py-20 px-4 bg-slate-900/50">
+      <section id="competences" className="py-20 px-4 bg-slate-900/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Mes <span className="text-cyan-400">Compétences</span>
@@ -217,10 +225,23 @@ export default function Portfolio() {
               </div>
             </div>
 
-            {/* Systèmes & Réseaux */}
+            {/* Développement */}
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
+              <Code className="w-12 h-12 text-purple-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">Développement & Scripting</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>• Python</li>
+                <li>• PowerShell</li>
+                <li>• Bash</li>
+                <li>• PHP</li>
+              </ul>
+            </div>
+
+
+            {/* Systèmes */}
             <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
               <Server className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Systèmes & Réseaux</h3>
+              <h3 className="text-xl font-bold mb-3">Systèmes</h3>
               <ul className="space-y-2 text-gray-300 text-sm">
                 <li>• Linux (Debian, Ubuntu, RHEL, Kali)</li>
                 <li>• Windows Server 2003-2019</li>
@@ -232,18 +253,6 @@ export default function Portfolio() {
                 <span className="text-xs bg-slate-700 px-2 py-1 rounded">Proxmox</span>
                 <span className="text-xs bg-slate-700 px-2 py-1 rounded">Ansible</span>
               </div>
-            </div>
-
-            {/* Développement */}
-            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <Code className="w-12 h-12 text-purple-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Développement & Scripting</h3>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li>• Python</li>
-                <li>• PowerShell</li>
-                <li>• Bash</li>
-                <li>• Automatisation</li>
-              </ul>
             </div>
 
             {/* Réseau */}
@@ -274,7 +283,7 @@ export default function Portfolio() {
       </section>
 
       {/* Expérience Section */}
-      <section id="expérience" className="py-20 px-4">
+      <section id="experience" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Mon <span className="text-cyan-400">Expérience</span>
