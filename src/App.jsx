@@ -11,7 +11,31 @@ export default function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Détection de la section visible avec Intersection Observer pour plus de précision
+      const sections = ['accueil', 'competences', 'experience', 'projets', 'contact'];
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      let currentSection = 'accueil';
+      
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSection = sectionId;
+          }
+        }
+      }
+      
+      setActiveSection(currentSection);
     };
+    
+    // Détection initiale
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -29,17 +53,42 @@ export default function Portfolio() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Création du lien mailto avec les données du formulaire
-    const subject = encodeURIComponent(`Message de ${formData.name}`);
-    const body = encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    window.location.href = `mailto:khaireddine.cherif27@gmail.com?subject=${subject}&body=${body}`;
+    setFormStatus('Envoi en cours...');
     
-    // Reset du formulaire
-    setFormData({ name: '', email: '', message: '' });
-    setFormStatus('Message envoyé !');
-    setTimeout(() => setFormStatus(''), 3000);
+    // Configuration Web3Forms (gratuit, illimité)
+    // Remplace par ta clé API de web3forms.com
+    const accessKey = 'aaf60077-cad5-402e-9105-358e7a5e54fc'; // À obtenir sur web3forms.com
+    
+    const formDataToSend = new FormData();
+    formDataToSend.append('access_key', accessKey);
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('message', formData.message);
+    formDataToSend.append('subject', `Nouveau message de ${formData.name} - Portfolio`);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        setFormData({ name: '', email: '', message: '' });
+        setFormStatus(' Message envoyé avec succès !');
+        setTimeout(() => setFormStatus(''), 5000);
+      } else {
+        setFormStatus(' Erreur lors de l\'envoi. Réessayez.');
+        setTimeout(() => setFormStatus(''), 5000);
+      }
+    } catch (error) {
+      console.error('Erreur:', error);
+      setFormStatus(' Erreur lors de l\'envoi. Réessayez.');
+      setTimeout(() => setFormStatus(''), 5000);
+    }
   };
 
   return (
@@ -77,7 +126,7 @@ export default function Portfolio() {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['accueil', 'compétences', 'experience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -215,7 +264,7 @@ export default function Portfolio() {
               <h3 className="text-xl font-bold mb-3">Certifications</h3>
               <ul className="space-y-2 text-gray-300 text-sm">
                 <li>✓ CHFI Computer Hacking Forensic Investigator</li>
-                <li>✓ CEH Certified ethical hacker</li>
+                <li>✓ CEH Certified Ethical Hacker</li>
                 <li>✓ AWS Security Essentials</li>
                 <li>🔄 OSCP En cours</li>
               </ul>
@@ -439,7 +488,15 @@ export default function Portfolio() {
               </button>
 
               {formStatus && (
-                <p className="text-center text-green-400">{formStatus}</p>
+                <div className={`text-center p-4 rounded-lg ${
+                  formStatus.includes('✅') 
+                    ? 'bg-cyan-500/20 border border-cyan-500/50 text-cyan-300' 
+                    : formStatus.includes('❌')
+                    ? 'bg-red-500/20 border border-red-500/50 text-red-300'
+                    : 'bg-slate-700/50 border border-slate-600 text-gray-300'
+                }`}>
+                  {formStatus}
+                </div>
               )}
             </form>
           </div>
