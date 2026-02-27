@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Shield, Code, Network, Terminal, Mail, Linkedin, ChevronDown, Menu, X, Lock, Server, Bug, Eye, Send } from 'lucide-react';
 
 export default function Portfolio() {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('accueil');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -421,6 +423,12 @@ export default function Portfolio() {
                   <span className="text-xs bg-red-900/30 text-red-300 px-3 py-1 rounded-full">Pentesting</span>
                   <span className="text-xs bg-red-900/30 text-red-300 px-3 py-1 rounded-full">Bloodhound</span>
                 </div>
+                <button
+                  onClick={() => navigate('/projets/pentest-ad')}
+                  className="mt-4 w-full border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-4 py-2 rounded-lg text-sm transition-all flex items-center justify-center gap-2"
+                >
+                  Découvrir le projet →
+                </button>
               </div>
             </div>
 
@@ -446,6 +454,12 @@ export default function Portfolio() {
                   <span className="text-xs bg-orange-900/30 text-orange-300 px-3 py-1 rounded-full">Burp Suite</span>
                   <span className="text-xs bg-orange-900/30 text-orange-300 px-3 py-1 rounded-full">OWASP</span>
                 </div>
+                <button
+                  onClick={() => navigate('/projets/pentest-web-aws')}
+                  className="mt-4 w-full border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-4 py-2 rounded-lg text-sm transition-all flex items-center justify-center gap-2"
+                >
+                  Découvrir le projet →
+                </button>
               </div>
             </div>
           </div>
