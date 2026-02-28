@@ -474,7 +474,7 @@ export default function Portfolio() {
             Labs & <span className="text-cyan-400">Plateformes</span>
           </h2>
           <p className="text-center text-gray-400 mb-12 font-mono text-sm">
-            Entraînement continu sur environnements réels — Easy · Medium · Realistic
+            Entraînement continu sur environnements CTF — Easy · Medium · Realistic
           </p>
 
           {/* Plateformes CTF */}
