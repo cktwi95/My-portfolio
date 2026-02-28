@@ -397,73 +397,200 @@ export default function Portfolio() {
       {/* Projets Section */}
       <section id="projets" className="py-20 px-4 bg-slate-900/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-4 text-center">
             Mes <span className="text-cyan-400">Projets</span>
           </h2>
+          <p className="text-center text-gray-400 mb-14 font-mono text-sm">
+            Réalisations techniques — Offensive · Défensif · Infrastructure
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Projet 1 */}
-            <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <div className="bg-gradient-to-br from-red-900/50 to-slate-800 p-6">
-                <Eye className="w-12 h-12 text-red-400 mb-4" />
-                <h3 className="text-2xl font-bold mb-2">Test d'Intrusion & Remédiation</h3>
-                <p className="text-gray-400">Active Directory - Environnement de production</p>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-300 mb-4">
-                  Audit de sécurité complet d'un environnement Active Directory en production avec identification des vulnérabilités et plan d'action de remédiation.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-300 mb-4">
-                  <li>• Reconnaissance et énumération</li>
-                  <li>• Exploitation des vulnérabilités identifiées</li>
-                  <li>• Rapport détaillé des failles de sécurité</li>
-                  <li>• Plan d'action de remédiation priorisé</li>
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-red-900/30 text-red-300 px-3 py-1 rounded-full">Active Directory</span>
-                  <span className="text-xs bg-red-900/30 text-red-300 px-3 py-1 rounded-full">Pentesting</span>
-                  <span className="text-xs bg-red-900/30 text-red-300 px-3 py-1 rounded-full">Bloodhound</span>
-                </div>
-                <button
-                  onClick={() => navigate('/projets/pentest-ad')}
-                  className="mt-4 w-full border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-4 py-2 rounded-lg text-sm transition-all flex items-center justify-center gap-2"
-                >
-                  Découvrir le projet →
-                </button>
-              </div>
+          {/* Catégorie : Pentest Offensif */}
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-mono text-xs text-red-400 tracking-widest uppercase">// Pentest Offensif</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-red-500/30 to-transparent"></div>
             </div>
+            <div className="grid md:grid-cols-2 gap-6">
 
-            {/* Projet 2 */}
-            <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <div className="bg-gradient-to-br from-orange-900/50 to-slate-800 p-6">
-                <Bug className="w-12 h-12 text-orange-400 mb-4" />
-                <h3 className="text-2xl font-bold mb-2">Test d'Intrusion Web</h3>
-                <p className="text-gray-400">Application Web - Environnement de production</p>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-300 mb-4">
-                  Audit de sécurité d'une application web en production avec identification des vulnérabilités OWASP Top 10.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-300 mb-4">
-                  <li>• Tests des vulnérabilités OWASP Top 10</li>
-                  <li>• Injection SQL, XSS, CSRF</li>
-                  <li>• Tests d'authentification et d'autorisation</li>
-                  <li>• Rapport détaillé avec preuve de concept</li>
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-orange-900/30 text-orange-300 px-3 py-1 rounded-full">Web Security</span>
-                  <span className="text-xs bg-orange-900/30 text-orange-300 px-3 py-1 rounded-full">Burp Suite</span>
-                  <span className="text-xs bg-orange-900/30 text-orange-300 px-3 py-1 rounded-full">OWASP</span>
+              {/* Pentest AD */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-red-500/50 transition-all hover:scale-[1.02] group">
+                <div className="bg-gradient-to-br from-red-900/40 to-slate-800 p-5">
+                  <div className="flex items-start justify-between mb-3">
+                    <Eye className="w-10 h-10 text-red-400" />
+                    <span className="font-mono text-xs text-red-400 bg-red-900/30 border border-red-500/20 px-2 py-0.5 rounded">Active Directory</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">Test d'Intrusion & Remédiation</h3>
+                  <p className="text-gray-400 text-sm font-mono">Environnement de production</p>
                 </div>
-                <button
-                  onClick={() => navigate('/projets/pentest-web-aws')}
-                  className="mt-4 w-full border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-4 py-2 rounded-lg text-sm transition-all flex items-center justify-center gap-2"
-                >
-                  Découvrir le projet →
-                </button>
+                <div className="p-5">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Compromission complète d'un AD en production — de l'accès utilisateur au Domain Admin via LLMNR Poisoning, Pass-the-Hash et Kerberoasting.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-red-900/20 text-red-300 border border-red-500/20 px-2 py-0.5 rounded font-mono">Bloodhound</span>
+                    <span className="text-xs bg-red-900/20 text-red-300 border border-red-500/20 px-2 py-0.5 rounded font-mono">Responder</span>
+                    <span className="text-xs bg-red-900/20 text-red-300 border border-red-500/20 px-2 py-0.5 rounded font-mono">Mimikatz</span>
+                    <span className="text-xs bg-red-900/20 text-red-300 border border-red-500/20 px-2 py-0.5 rounded font-mono">Impacket</span>
+                  </div>
+                  <button onClick={() => navigate('/projets/pentest-ad')} className="w-full border border-red-500/30 text-red-400 hover:bg-red-500/10 hover:border-red-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
+                    Découvrir le projet →
+                  </button>
+                </div>
               </div>
+
+              {/* Pentest Web AWS */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-orange-500/50 transition-all hover:scale-[1.02] group">
+                <div className="bg-gradient-to-br from-orange-900/40 to-slate-800 p-5">
+                  <div className="flex items-start justify-between mb-3">
+                    <Bug className="w-10 h-10 text-orange-400" />
+                    <span className="font-mono text-xs text-orange-400 bg-orange-900/30 border border-orange-500/20 px-2 py-0.5 rounded">Web & AWS</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">Test d'Intrusion Web & Cloud</h3>
+                  <p className="text-gray-400 text-sm font-mono">Application en production</p>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Audit blackbox → greybox d'une application web. Découverte d'un sous-domaine exposé menant à la compromission complète de l'infrastructure AWS.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-orange-900/20 text-orange-300 border border-orange-500/20 px-2 py-0.5 rounded font-mono">Burp Suite</span>
+                    <span className="text-xs bg-orange-900/20 text-orange-300 border border-orange-500/20 px-2 py-0.5 rounded font-mono">OWASP</span>
+                    <span className="text-xs bg-orange-900/20 text-orange-300 border border-orange-500/20 px-2 py-0.5 rounded font-mono">AWS Takeover</span>
+                  </div>
+                  <button onClick={() => navigate('/projets/pentest-web-aws')} className="w-full border border-orange-500/30 text-orange-400 hover:bg-orange-500/10 hover:border-orange-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
+                    Découvrir le projet →
+                  </button>
+                </div>
+              </div>
+
             </div>
           </div>
+
+          {/* Catégorie : Blue Team & SOC */}
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-mono text-xs text-cyan-400 tracking-widest uppercase">// Blue Team & SOC</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/30 to-transparent"></div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+
+              {/* SIEM Wazuh */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all hover:scale-[1.02]">
+                <div className="bg-gradient-to-br from-cyan-900/30 to-slate-800 p-5">
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-3xl">🛡️</span>
+                    <span className="font-mono text-xs text-cyan-400 bg-cyan-900/30 border border-cyan-500/20 px-2 py-0.5 rounded">SIEM</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">Build SIEM Wazuh complet</h3>
+                  <p className="text-gray-400 text-sm font-mono">On-premise — Detection & Response</p>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Stack Wazuh from scratch — 47 règles custom MITRE ATT&CK, playbooks Active Response, alerting multicanal. Délai détection &lt; 60s.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-cyan-900/20 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded font-mono">Wazuh</span>
+                    <span className="text-xs bg-cyan-900/20 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded font-mono">OpenSearch</span>
+                    <span className="text-xs bg-cyan-900/20 text-cyan-300 border border-cyan-500/20 px-2 py-0.5 rounded font-mono">MITRE ATT&CK</span>
+                  </div>
+                  <button onClick={() => navigate('/projets/siem-wazuh')} className="w-full border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
+                    Découvrir le projet →
+                  </button>
+                </div>
+              </div>
+
+              {/* SOAR */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-indigo-500/50 transition-all hover:scale-[1.02]">
+                <div className="bg-gradient-to-br from-indigo-900/30 to-slate-800 p-5">
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-3xl">⚡</span>
+                    <span className="font-mono text-xs text-indigo-400 bg-indigo-900/30 border border-indigo-500/20 px-2 py-0.5 rounded">SOAR</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">SOAR TheHive · MISP · OpenCTI</h3>
+                  <p className="text-gray-400 text-sm font-mono">Orchestration & Threat Intelligence</p>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Pipeline alerte → case → enrichissement IOC → contexte ATT&CK → réponse automatisée. MTTR moyen : 4 minutes 32 secondes.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-indigo-900/20 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono">TheHive</span>
+                    <span className="text-xs bg-indigo-900/20 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono">MISP</span>
+                    <span className="text-xs bg-indigo-900/20 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono">OpenCTI</span>
+                  </div>
+                  <button onClick={() => navigate('/projets/soar')} className="w-full border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
+                    Découvrir le projet →
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Catégorie : Cloud & Infrastructure */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-mono text-xs text-purple-400 tracking-widest uppercase">// Cloud & Infrastructure</span>
+              <div className="flex-1 h-px bg-gradient-to-r from-purple-500/30 to-transparent"></div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+
+              {/* CSPM */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-purple-500/50 transition-all hover:scale-[1.02]">
+                <div className="bg-gradient-to-br from-purple-900/30 to-slate-800 p-5">
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-3xl">🔎</span>
+                    <div className="flex gap-1">
+                      <span className="font-mono text-xs text-orange-400 bg-orange-900/20 border border-orange-500/20 px-2 py-0.5 rounded">AWS</span>
+                      <span className="font-mono text-xs text-blue-400 bg-blue-900/20 border border-blue-500/20 px-2 py-0.5 rounded">GCP</span>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">CSPM Qualys Multi-Cloud</h3>
+                  <p className="text-gray-400 text-sm font-mono">Cloud Security Posture Management</p>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Scanner Qualys on-premise surveillant 24/7 assets AWS & GCP. sur le référentiel CIS Benchmarks v2, détection de défauts de configurations cloud.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-purple-900/20 text-purple-300 border border-purple-500/20 px-2 py-0.5 rounded font-mono">Qualys VMDR</span>
+                    <span className="text-xs bg-purple-900/20 text-purple-300 border border-purple-500/20 px-2 py-0.5 rounded font-mono">CIS Benchmark</span>
+                    <span className="text-xs bg-purple-900/20 text-purple-300 border border-purple-500/20 px-2 py-0.5 rounded font-mono">Terraform</span>
+                  </div>
+                  <button onClick={() => navigate('/projets/cspm-qualys')} className="w-full border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
+                    Découvrir le projet →
+                  </button>
+                </div>
+              </div>
+
+              {/* OpenLDAP */}
+              <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-green-500/50 transition-all hover:scale-[1.02]">
+                <div className="bg-gradient-to-br from-green-900/30 to-slate-800 p-5">
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-3xl">📁</span>
+                    <span className="font-mono text-xs text-green-400 bg-green-900/20 border border-green-500/20 px-2 py-0.5 rounded">HA Cluster</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-1">Annuaire OpenLDAP complet</h3>
+                  <p className="text-gray-400 text-sm font-mono">15 000 entrées — SLA 99.9%</p>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Annuaire d'entreprise from scratch sur cahier des charges. Cluster 3 nœuds, LDAPS TLS 1.3, ppolicy, ACLs et 5 applicatifs raccordés. 512 req/s validé.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-green-900/20 text-green-300 border border-green-500/20 px-2 py-0.5 rounded font-mono">OpenLDAP 2.6</span>
+                    <span className="text-xs bg-green-900/20 text-green-300 border border-green-500/20 px-2 py-0.5 rounded font-mono">HAProxy</span>
+                    <span className="text-xs bg-green-900/20 text-green-300 border border-green-500/20 px-2 py-0.5 rounded font-mono">TLS 1.3</span>
+                  </div>
+                  <button onClick={() => navigate('/projets/openldap')} className="w-full border border-green-500/30 text-green-400 hover:bg-green-500/10 hover:border-green-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
+                    Découvrir le projet →
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -474,7 +601,7 @@ export default function Portfolio() {
             Labs & <span className="text-cyan-400">Plateformes</span>
           </h2>
           <p className="text-center text-gray-400 mb-12 font-mono text-sm">
-            Entraînement continu sur environnements CTF — Easy · Medium · Realistic
+            Entraînement continu sur environnements réels — Easy · Medium · Realistic
           </p>
 
           {/* Plateformes CTF */}
