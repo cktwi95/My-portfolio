@@ -14,6 +14,7 @@ export default function Portfolio() {
   competences: 'Compétences',
   experience: 'Expérience',
   projets: 'Projets',
+  labs: 'Labs',
   contact: 'Contact'
 };
 
@@ -23,7 +24,7 @@ export default function Portfolio() {
       setIsScrolled(window.scrollY > 50);
       
       // Détection de la section visible avec Intersection Observer pour plus de précision
-      const sections = ['accueil', 'competences', 'experience', 'projets', 'contact'];
+      const sections = ['accueil', 'competences', 'experience', 'projets', 'labs', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
       let currentSection = 'accueil';
@@ -114,7 +115,7 @@ export default function Portfolio() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'competences', 'experience', 'projets', 'labs', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -136,7 +137,7 @@ export default function Portfolio() {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['accueil', 'competences', 'experience', 'projets', 'contact'].map((section) => (
+              {['accueil', 'competences', 'experience', 'projets', 'labs', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -463,6 +464,136 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Labs & Plateformes Section */}
+      <section id="labs" className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-center">
+            Labs & <span className="text-cyan-400">Plateformes</span>
+          </h2>
+          <p className="text-center text-gray-400 mb-12 font-mono text-sm">
+            Entraînement continu sur environnements réels — Easy · Medium · Realistic
+          </p>
+
+          {/* Plateformes CTF */}
+          <div className="mb-6">
+            <p className="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-6">// Plateformes CTF & Pentest Labs</p>
+            <div className="grid md:grid-cols-3 gap-6">
+
+              {/* Root-Me */}
+              <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all group">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-xl">⚡</div>
+                  <div>
+                    <div className="font-bold text-white">Root-Me</div>
+                    <div className="text-xs font-mono text-gray-500">root-me.org</div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="text-xs bg-green-900/30 text-green-400 border border-green-500/20 px-2 py-0.5 rounded font-mono">Easy</span>
+                  <span className="text-xs bg-yellow-900/30 text-yellow-400 border border-yellow-500/20 px-2 py-0.5 rounded font-mono">Medium</span>
+                </div>
+                <div className="mb-1 flex justify-between items-center">
+                  <span className="text-xs font-mono text-gray-500">Activité</span>
+                  <span className="text-xs font-mono text-yellow-400">30%</span>
+                </div>
+                <div className="w-full bg-slate-700/50 rounded-full h-1.5">
+                  <div className="h-1.5 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-400 transition-all duration-1000" style={{width:'30%'}}></div>
+                </div>
+                <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Web, réseau, cryptographie, forensique — challenges progressifs multi-catégories.</p>
+              </div>
+
+              {/* HackTheBox */}
+              <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all group">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center text-xl">🟩</div>
+                  <div>
+                    <div className="font-bold text-white">HackTheBox</div>
+                    <div className="text-xs font-mono text-gray-500">hackthebox.com</div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="text-xs bg-green-900/30 text-green-400 border border-green-500/20 px-2 py-0.5 rounded font-mono">Easy</span>
+                  <span className="text-xs bg-yellow-900/30 text-yellow-400 border border-yellow-500/20 px-2 py-0.5 rounded font-mono">Medium</span>
+                  <span className="text-xs bg-red-900/30 text-red-400 border border-red-500/20 px-2 py-0.5 rounded font-mono">Realistic</span>
+                </div>
+                <div className="mb-1 flex justify-between items-center">
+                  <span className="text-xs font-mono text-gray-500">Activité</span>
+                  <span className="text-xs font-mono text-green-400">60%</span>
+                </div>
+                <div className="w-full bg-slate-700/50 rounded-full h-1.5">
+                  <div className="h-1.5 rounded-full bg-gradient-to-r from-green-600 to-green-400 transition-all duration-1000" style={{width:'60%'}}></div>
+                </div>
+                <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Machines Linux/Windows, Active Directory, pentest infrastructure — scénarios réalistes.</p>
+              </div>
+
+              {/* TryHackMe */}
+              <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all group">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center text-xl">🔴</div>
+                  <div>
+                    <div className="font-bold text-white">TryHackMe</div>
+                    <div className="text-xs font-mono text-gray-500">tryhackme.com</div>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="text-xs bg-green-900/30 text-green-400 border border-green-500/20 px-2 py-0.5 rounded font-mono">Easy</span>
+                  <span className="text-xs bg-yellow-900/30 text-yellow-400 border border-yellow-500/20 px-2 py-0.5 rounded font-mono">Medium</span>
+                  <span className="text-xs bg-red-900/30 text-red-400 border border-red-500/20 px-2 py-0.5 rounded font-mono">Realistic</span>
+                </div>
+                <div className="mb-1 flex justify-between items-center">
+                  <span className="text-xs font-mono text-gray-500">Activité</span>
+                  <span className="text-xs font-mono text-red-400">75%</span>
+                </div>
+                <div className="w-full bg-slate-700/50 rounded-full h-1.5">
+                  <div className="h-1.5 rounded-full bg-gradient-to-r from-red-600 to-red-400 transition-all duration-1000" style={{width:'75%'}}></div>
+                </div>
+                <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Parcours guidés offensifs & défensifs, SOC, cloud security, red team paths.</p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Formations & Académies */}
+          <div>
+            <p className="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-6">// Formations & Académies spécialisées</p>
+            <div className="grid md:grid-cols-3 gap-4">
+
+              {/* PortSwigger */}
+              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700/50 hover:border-orange-500/40 transition-all flex gap-4 items-start">
+                <div className="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-lg flex-shrink-0">🕷️</div>
+                <div>
+                  <div className="font-bold text-sm text-white mb-0.5">PortSwigger Academy</div>
+                  <div className="text-xs font-mono text-orange-400/80 mb-2">portswigger.net/web-security</div>
+                  <p className="text-xs text-gray-500 font-mono leading-relaxed">Web app security — SQLi, XSS, SSRF, XXE, IDOR, OAuth, CORS, Business Logic.</p>
+                </div>
+              </div>
+
+              {/* YesWeHack Dojo */}
+              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700/50 hover:border-purple-500/40 transition-all flex gap-4 items-start">
+                <div className="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-lg flex-shrink-0">🥷</div>
+                <div>
+                  <div className="font-bold text-sm text-white mb-0.5">YesWeHack Dojo</div>
+                  <div className="text-xs font-mono text-purple-400/80 mb-2">dojo.yeswehack.com</div>
+                  <p className="text-xs text-gray-500 font-mono leading-relaxed">Challenges orientés Bug Bounty — approche terrain, vulnérabilités réelles.</p>
+                </div>
+              </div>
+
+              {/* Offensive Security */}
+              <div className="bg-slate-800/30 p-5 rounded-xl border border-slate-700/50 hover:border-cyan-500/40 transition-all flex gap-4 items-start">
+                <div className="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-lg flex-shrink-0">🎯</div>
+                <div>
+                  <div className="font-bold text-sm text-white mb-0.5">Offensive Security</div>
+                  <div className="text-xs font-mono text-cyan-400/80 mb-2">offsec.com — Préparation OSCP</div>
+                  <p className="text-xs text-gray-500 font-mono leading-relaxed">PEN-200, labs PWK — exploitation, post-exploitation, pivoting, rapport pentest.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
