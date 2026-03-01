@@ -518,7 +518,7 @@ export default function Portfolio() {
                     <span className="text-xs bg-indigo-900/20 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono">MISP</span>
                     <span className="text-xs bg-indigo-900/20 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded font-mono">OpenCTI</span>
                   </div>
-                  <button onClick={() => navigate('/projets/soar')} className="w-full border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
+                  <button onClick={() => navigate('/projets/soar-thehive')} className="w-full border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10 hover:border-indigo-400 px-4 py-2 rounded-lg text-sm transition-all font-mono">
                     Découvrir le projet →
                   </button>
                 </div>
