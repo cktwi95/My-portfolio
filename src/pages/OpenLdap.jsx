@@ -201,7 +201,7 @@ export default function OpenLdap() {
       <nav className="ol-nav">
         <div className="ol-nav-inner">
           <span className="ol-nav-logo">KC // Project Reports</span>
-          <button className="ol-nav-back" onClick={() => navigate('/#projets')}>← Retour aux projets</button>
+          <button className="ol-nav-back" onClick={() => { navigate('/'); setTimeout(() => document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>← Retour aux projets</button>
         </div>
       </nav>
 

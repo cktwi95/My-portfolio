@@ -207,7 +207,7 @@ export default function SoarTheHive() {
       <nav className="soar-nav">
         <div className="soar-nav-inner">
           <span className="soar-nav-logo">KC // Project Reports</span>
-          <button className="soar-nav-back" onClick={() => navigate('/#projets')}>← Retour aux projets</button>
+          <button className="soar-nav-back" onClick={() => { navigate('/'); setTimeout(() => document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>← Retour aux projets</button>
         </div>
       </nav>
 

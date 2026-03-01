@@ -189,7 +189,7 @@ export default function CspmQualys() {
       <nav className="cq-nav">
         <div className="cq-nav-inner">
           <span className="cq-nav-logo">KC // Project Reports</span>
-          <button className="cq-nav-back" onClick={() => navigate('/#projets')}>← Retour aux projets</button>
+          <button className="cq-nav-back" onClick={() => { navigate('/'); setTimeout(() => document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>← Retour aux projets</button>
         </div>
       </nav>
 

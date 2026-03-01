@@ -194,7 +194,7 @@ export default function SiemWazuh() {
       <nav className="sw-nav">
         <div className="sw-nav-inner">
           <span className="sw-nav-logo">KC // Project Reports</span>
-          <button className="sw-nav-back" onClick={() => navigate('/#projets')}>← Retour aux projets</button>
+          <button className="sw-nav-back" onClick={() => { navigate('/'); setTimeout(() => document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>← Retour aux projets</button>
         </div>
       </nav>
 
