@@ -30,7 +30,7 @@ export default function OpenLdap() {
         .ol-glow-2  { position:fixed; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(139,92,246,0.04),transparent 70%); bottom:-100px; right:-100px; pointer-events:none; z-index:0; }
 
         /* NAV */
-        .ol-nav { padding:1.5rem 0; border-bottom:1px solid rgba(255,255,255,0.07); position:sticky; top:0; background:rgba(11,13,20,0.95); backdrop-filter:blur(12px); z-index:100; }
+        .ol-nav { padding:1.5rem 0; border-bottom:1px solid rgba(255,255,255,0.07); position:fixed; top:0; width:100%; background:rgba(11,13,20,0.95); backdrop-filter:blur(12px); z-index:100; }
         .ol-nav-inner { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; }
         .ol-nav-logo { font-family:'JetBrains Mono',monospace; font-size:0.9rem; color:#00e5ff; }
         .ol-nav-back { font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:#64748b; background:none; border:none; cursor:pointer; transition:color 0.2s; }

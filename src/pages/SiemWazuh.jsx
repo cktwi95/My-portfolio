@@ -38,7 +38,7 @@ export default function SiemWazuh() {
         .sw-glow-orb { position:fixed; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(0,196,255,0.04),transparent 70%); top:-100px; right:-100px; pointer-events:none; z-index:0; }
 
         /* NAV */
-        .sw-nav { padding:1.5rem 0; border-bottom:1px solid rgba(255,255,255,0.07); position:sticky; top:0; background:rgba(11,13,20,0.95); backdrop-filter:blur(12px); z-index:100; }
+        .sw-nav { padding:1.5rem 0; border-bottom:1px solid rgba(255,255,255,0.07); position:fixed; top:0; width:100%; background:rgba(11,13,20,0.95); backdrop-filter:blur(12px); z-index:100; }
         .sw-nav-inner { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; }
         .sw-nav-logo { font-family:'JetBrains Mono',monospace; font-size:0.9rem; color:#00e5ff; }
         .sw-nav-back { display:flex; align-items:center; gap:0.5rem; font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:#64748b; background:none; border:none; cursor:pointer; transition:color 0.2s; }

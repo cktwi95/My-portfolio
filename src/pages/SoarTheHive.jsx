@@ -29,7 +29,7 @@ export default function SoarTheHive() {
         .soar-glow    { position:fixed; width:700px; height:700px; border-radius:50%; background:radial-gradient(circle,rgba(99,102,241,0.05),transparent 70%); top:-200px; right:-200px; pointer-events:none; z-index:0; }
 
         /* NAV */
-        .soar-nav { padding:1.5rem 0; border-bottom:1px solid rgba(255,255,255,0.07); position:sticky; top:0; background:rgba(11,13,20,0.95); backdrop-filter:blur(12px); z-index:100; }
+        .soar-nav { padding:1.5rem 0; border-bottom:1px solid rgba(255,255,255,0.07); position:fixed; top:0; width:100%; background:rgba(11,13,20,0.95); backdrop-filter:blur(12px); z-index:100; }
         .soar-nav-inner { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; }
         .soar-nav-logo { font-family:'JetBrains Mono',monospace; font-size:0.9rem; color:#00e5ff; }
         .soar-nav-back { font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:#64748b; background:none; border:none; cursor:pointer; transition:color 0.2s; }
