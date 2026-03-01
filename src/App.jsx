@@ -609,27 +609,28 @@ export default function Portfolio() {
             <p className="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-6">// Plateformes CTF & Pentest Labs</p>
             <div className="grid md:grid-cols-3 gap-6">
 
-              {/* Root-Me */}
+              {/* TryHackMe */}
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-xl">⚡</div>
+                  <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center text-xl">🔴</div>
                   <div>
-                    <div className="font-bold text-white">Root-Me</div>
-                    <div className="text-xs font-mono text-gray-500">root-me.org</div>
+                    <div className="font-bold text-white">TryHackMe</div>
+                    <div className="text-xs font-mono text-gray-500">tryhackme.com</div>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="text-xs bg-green-900/30 text-green-400 border border-green-500/20 px-2 py-0.5 rounded font-mono">Easy</span>
                   <span className="text-xs bg-yellow-900/30 text-yellow-400 border border-yellow-500/20 px-2 py-0.5 rounded font-mono">Medium</span>
+                  <span className="text-xs bg-red-900/30 text-red-400 border border-red-500/20 px-2 py-0.5 rounded font-mono">Realistic</span>
                 </div>
                 <div className="mb-1 flex justify-between items-center">
                   <span className="text-xs font-mono text-gray-500">Activité</span>
-                  <span className="text-xs font-mono text-yellow-400">30%</span>
+                  <span className="text-xs font-mono text-red-400">75%</span>
                 </div>
                 <div className="w-full bg-slate-700/50 rounded-full h-1.5">
-                  <div className="h-1.5 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-400 transition-all duration-1000" style={{width:'30%'}}></div>
+                  <div className="h-1.5 rounded-full bg-gradient-to-r from-red-600 to-red-400 transition-all duration-1000" style={{width:'75%'}}></div>
                 </div>
-                <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Web, réseau, cryptographie, forensique — challenges progressifs multi-catégories.</p>
+                <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Parcours guidés offensifs & défensifs, SOC, cloud security, red team paths.</p>
               </div>
 
               {/* HackTheBox */}
@@ -655,31 +656,28 @@ export default function Portfolio() {
                 </div>
                 <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Machines Linux/Windows, Active Directory, pentest infrastructure — scénarios réalistes.</p>
               </div>
-
-              {/* TryHackMe */}
+              {/* Root-Me */}
               <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center text-xl">🔴</div>
+                  <div className="w-10 h-10 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-xl">⚡</div>
                   <div>
-                    <div className="font-bold text-white">TryHackMe</div>
-                    <div className="text-xs font-mono text-gray-500">tryhackme.com</div>
+                    <div className="font-bold text-white">Root-Me</div>
+                    <div className="text-xs font-mono text-gray-500">root-me.org</div>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="text-xs bg-green-900/30 text-green-400 border border-green-500/20 px-2 py-0.5 rounded font-mono">Easy</span>
                   <span className="text-xs bg-yellow-900/30 text-yellow-400 border border-yellow-500/20 px-2 py-0.5 rounded font-mono">Medium</span>
-                  <span className="text-xs bg-red-900/30 text-red-400 border border-red-500/20 px-2 py-0.5 rounded font-mono">Realistic</span>
                 </div>
                 <div className="mb-1 flex justify-between items-center">
                   <span className="text-xs font-mono text-gray-500">Activité</span>
-                  <span className="text-xs font-mono text-red-400">75%</span>
+                  <span className="text-xs font-mono text-yellow-400">30%</span>
                 </div>
                 <div className="w-full bg-slate-700/50 rounded-full h-1.5">
-                  <div className="h-1.5 rounded-full bg-gradient-to-r from-red-600 to-red-400 transition-all duration-1000" style={{width:'75%'}}></div>
+                  <div className="h-1.5 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-400 transition-all duration-1000" style={{width:'30%'}}></div>
                 </div>
-                <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Parcours guidés offensifs & défensifs, SOC, cloud security, red team paths.</p>
+                <p className="text-xs text-gray-500 font-mono mt-3 leading-relaxed">Web, réseau, cryptographie, forensique — challenges progressifs multi-catégories.</p>
               </div>
-
             </div>
           </div>
 
