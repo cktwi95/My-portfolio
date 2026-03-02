@@ -11,8 +11,8 @@ export default function Portfolio() {
   const [formStatus, setFormStatus] = useState('');
   const sectionLabels = {
   accueil: 'Accueil',
-  competences: 'Compétences',
   experience: 'Expérience',
+  competences: 'Compétences',
   projets: 'Projets',
   labs: 'Labs',
   contact: 'Contact'
@@ -24,7 +24,7 @@ export default function Portfolio() {
       setIsScrolled(window.scrollY > 50);
       
       // Détection de la section visible avec Intersection Observer pour plus de précision
-      const sections = ['accueil', 'competences', 'experience', 'projets', 'labs', 'contact'];
+      const sections = ['accueil', 'experience', 'competences' , 'projets', 'labs', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
       let currentSection = 'accueil';
@@ -115,7 +115,7 @@ export default function Portfolio() {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['accueil', 'competences', 'experience', 'projets', 'labs', 'contact'].map((section) => (
+              {['accueil', 'experience', 'competences', 'projets', 'labs', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -137,7 +137,7 @@ export default function Portfolio() {
         {isMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-slate-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {['accueil', 'competences', 'experience', 'projets', 'labs', 'contact'].map((section) => (
+              {['accueil', 'experience', 'competences', 'projets', 'labs', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -182,106 +182,6 @@ export default function Portfolio() {
           <button onClick={() => scrollToSection('competences')} className="animate-bounce">
             <ChevronDown className="w-8 h-8 text-cyan-400 mx-auto" />
           </button>
-        </div>
-      </section>
-
-      {/* Compétences Section */}
-      <section id="competences" className="py-20 px-4 bg-slate-900/50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            Mes <span className="text-cyan-400">Compétences</span>
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Cybersécurité Offensive */}
-            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <Bug className="w-12 h-12 text-red-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Cybersécurité Offensive</h3>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li>• Pentesting Web & Système</li>
-                <li>• Reconnaissance & Énumération</li>
-                <li>• Exploitation de vulnérabilités</li>
-                <li>• Escalation de privilèges</li>
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Metasploit</span>
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Burp Suite</span>
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Nmap</span>
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Qualys</span>
-              </div>
-            </div>
-
-            {/* Cybersécurité Défensive */}
-            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <Shield className="w-12 h-12 text-green-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Cybersécurité Défensive</h3>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li>• Traitement d'incidents</li>
-                <li>• Analyse forensique</li>
-                <li>• SIEM/SOAR (ELK, QRadar)</li>
-                <li>• EDR (SentinelOne, Cybereason)</li>
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">TheHive</span>
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">MISP</span>
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Bloodhound</span>
-              </div>
-            </div>
-
-            {/* Développement */}
-            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <Code className="w-12 h-12 text-purple-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Développement & Scripting</h3>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li>• Python</li>
-                <li>• PowerShell</li>
-                <li>• Bash</li>
-                <li>• PHP</li>
-              </ul>
-            </div>
-
-
-            {/* Systèmes */}
-            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <Server className="w-12 h-12 text-blue-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Systèmes</h3>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li>• Linux (Debian, Ubuntu, RHEL, Kali)</li>
-                <li>• Windows Server 2003-2019</li>
-                <li>• Active Directory / Azure AD</li>
-                <li>• OpenLDAP</li>
-              </ul>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">VMware</span>
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Proxmox</span>
-                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Ansible</span>
-              </div>
-            </div>
-
-            {/* Réseau */}
-            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <Network className="w-12 h-12 text-cyan-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Réseau & Infrastructure</h3>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li>• Cisco Switch & Router</li>
-                <li>• SD-Wan, HA, LB</li>
-                <li>• Stormshield</li>
-                <li>• Checkpoint/Fortinet</li>
-              </ul>
-            </div>
-
-            {/* Certifications */}
-            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
-              <Lock className="w-12 h-12 text-yellow-400 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Certifications</h3>
-              <ul className="space-y-2 text-gray-300 text-sm">
-                <li>✓ CHFI Computer Hacking Forensic Investigator</li>
-                <li>✓ CEH Certified Ethical Hacker</li>
-                <li>✓ AWS Security Essentials</li>
-                <li>🔄 OSCP En cours</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -389,6 +289,105 @@ export default function Portfolio() {
                 <span className="text-xs bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full">Intune</span>
                 <span className="text-xs bg-purple-900/30 text-purple-300 px-3 py-1 rounded-full">Kali Linux</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Compétences Section */}
+      <section id="competences" className="py-20 px-4 bg-slate-900/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center">
+            Mes <span className="text-cyan-400">Compétences</span>
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Cybersécurité Offensive */}
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
+              <Bug className="w-12 h-12 text-red-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">Cybersécurité Offensive</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>• Pentesting Web & Système</li>
+                <li>• Reconnaissance & Énumération</li>
+                <li>• Exploitation de vulnérabilités</li>
+                <li>• Escalation de privilèges</li>
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Metasploit</span>
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Burp Suite</span>
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Nmap</span>
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Qualys</span>
+              </div>
+            </div>
+
+            {/* Cybersécurité Défensive */}
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
+              <Shield className="w-12 h-12 text-green-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">Cybersécurité Défensive</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>• Traitement d'incidents</li>
+                <li>• Analyse forensique</li>
+                <li>• SIEM/SOAR (ELK, QRadar)</li>
+                <li>• EDR (SentinelOne, Cybereason)</li>
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">TheHive</span>
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">MISP</span>
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Bloodhound</span>
+              </div>
+            </div>
+
+            {/* Développement */}
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
+              <Code className="w-12 h-12 text-purple-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">Développement & Scripting</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>• Python</li>
+                <li>• PowerShell</li>
+                <li>• Bash</li>
+                <li>• PHP</li>
+              </ul>
+            </div>
+
+
+            {/* Systèmes */}
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
+              <Server className="w-12 h-12 text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">Systèmes</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>• Linux (Debian, Ubuntu, RHEL, Kali)</li>
+                <li>• Windows Server 2003-2019</li>
+                <li>• Active Directory / Azure AD</li>
+                <li>• OpenLDAP</li>
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">VMware</span>
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Proxmox</span>
+                <span className="text-xs bg-slate-700 px-2 py-1 rounded">Ansible</span>
+              </div>
+            </div>
+
+            {/* Réseau */}
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
+              <Network className="w-12 h-12 text-cyan-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">Réseau & Infrastructure</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>• Cisco Switch & Router</li>
+                <li>• SD-Wan, HA, LB</li>
+                <li>• Stormshield</li>
+                <li>• Checkpoint/Fortinet</li>
+              </ul>
+            </div>
+
+            {/* Certifications */}
+            <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all hover:transform hover:scale-105">
+              <Lock className="w-12 h-12 text-yellow-400 mb-4" />
+              <h3 className="text-xl font-bold mb-3">Certifications</h3>
+              <ul className="space-y-2 text-gray-300 text-sm">
+                <li>✓ CHFI Computer Hacking Forensic Investigator</li>
+                <li>✓ CEH Certified Ethical Hacker</li>
+                <li>✓ AWS Security Essentials</li>
+                <li>🔄 OSCP En cours</li>
+              </ul>
             </div>
           </div>
         </div>
